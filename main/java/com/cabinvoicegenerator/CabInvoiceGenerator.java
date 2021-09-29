@@ -41,5 +41,5 @@ public class CabInvoiceGenerator {
 
     public void addRides(String userID, Rides[] rides) {
         rideRepository.addRides(userID, rides);
-    }
+     }
 }

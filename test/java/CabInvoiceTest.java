@@ -58,4 +58,17 @@ public class CabInvoiceTest {
         int NoOfRides = cabInvoiceGenerator.numberOfRides(rides);
         Assertions.assertEquals(20, rideDetails, 0.0);
     }
+
+    @Test
+    void addingPremiumAndNormalRide() {
+        String userID = "Driver1";
+        Rides[] rides = new Rides[]{new Rides(1.0, 5, PrimiumRides.PREMIUM),
+                new Rides(0.2, 2, PrimiumRides.Normal)
+        };
+        CabInvoiceGenerator cabInvoiceGenerator = new CabInvoiceGenerator();
+        cabInvoiceGenerator.addRides(userID, rides);
+        double rideDetails = cabInvoiceGenerator.getRidesDetails(userID);
+        int NoOfRides = cabInvoiceGenerator.numberOfRides(rides);
+        Assertions.assertEquals(20, rideDetails, 0.0);
+    }
 }
